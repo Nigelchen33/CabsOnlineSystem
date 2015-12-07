@@ -1,0 +1,72 @@
+   <!--1272398 Yixiao Chen -->
+
+<html>
+    <head>
+        <link rel = "stylesheet" href="style.css">
+        <title>CabsOnline System</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--connect to booking javascript -->
+        <script type="text/javascript" src="booking.js"></script>
+         <!--change background -->
+        <style type="text/css">
+            body{
+                background:url(image/cabs.jpg);
+            }
+            p{
+                font-size:20px;
+            }
+            h1{
+                color:Orchid;
+            }
+        </style>
+    </head>
+     <!--change layout -->
+    <body class = "centre">
+        <h1 class = "wordCentre">CabsOnline System</h1>
+        <HR>
+        <table class = "tableLayout">
+            <tr><td><label class = "headFont">Customer Details:</label></td></tr>
+            <tr><td></td></tr>
+             <!--customer details -->
+            <tr><td><label>Customer Name: </label></td><td><input id="customerName" name="customerName" type="text" placeholder="Jack"></td><tr>
+            <tr><td><label>Contact Number:</label></td><td><input id="contactNum" name="contactNum" type="text" placeholder="02112345678"></td></tr>
+            <tr><td></td></tr><tr><td></td></tr>
+            <tr><td><label class = "headFont">Pick-Up Details:</label></td></tr>
+            <tr><td></td></tr>
+            <!--address details -->
+            <tr><td><label>Unit Number(if applicable): </label></td><td><input id="unitNum" name="unitNum" type="number" placeholder="2"></td></tr>
+            <tr><td><label>Street Number: </td><td><input id="streetNum" name="streetNum" type="text" placeholder="8"></td></tr>
+            <tr><td><label>Street Name: </td><td><input id="streetName" name="streetName" type="text" placeholder="esplanade Road"></td></tr>
+            <tr><td><label>Suburb: </label></td><td><input id="suburb" name="suburb" type="text" placeholder="Mt Eden"></td></tr>
+            <tr><td></td></tr><tr><td></td></tr>
+            <tr><td><label class = "headFont">Destination Details:</label></td></tr>
+            <tr><td></td></tr>
+              <!--destination details -->
+            <tr><td><label>Destination Address:</label></td><td><input id="deAddress" name="deAddress" type="text" placeholder="50 Mount Wellington Highway"></td></tr>
+            <tr><td><label>Destination Suburb:</label></td><td><input id="deSuburb" name="deSuburb" type="text" placeholder="Mount Wellington "></td></tr>
+            <tr><td><label>Pick-Up Date:</label></td><td><input id="date" name="date:" type="text" placeholder="7-6-2015" ></td></tr>
+            <tr><td><label>Pick-Up Time</label></td><td><input id="time" name="time" type="text" placeholder="12:12"></td></tr>
+            <tr><td><label>Number of Passengers</label></td><td><select id = "pass"><option value="1" selected="selected">1 </option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option></select></td></tr>
+            <tr><td><label>current time:</label><td><input id="cudate" name="cudate" type="datetime" readonly></td></tr>
+            <tr><td><input name="submit" type="submit" value="submit" onclick="process();"></td></tr>
+            <tr><td><a href="admin.htm">Go to Admin</a></td></tr>
+        </table>
+          <!--current date details -->
+        <script type="text/javascript">
+                var cudate = new Date();
+                var day = cudate.getDate();
+                var month = cudate.getMonth() + 1;
+                var year = cudate.getFullYear();
+                var hour = cudate.getHours();
+                var minute = cudate.getMinutes();
+                var second = cudate.getSeconds();
+                document.getElementById("cudate").value = day + "-" + month + "-" + year + " " + hour + ":" + minute + ":" + second;
+        </script>
+        <div id="status" class = "showCentre"></div>
+        <img alt="logo" src="image/logo.JPG">
+    </body>
+</html>

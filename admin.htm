@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <link rel = "stylesheet" href="style.css">
+        <title>CabsOnline System Administration</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--connect to booking javascript -->
+        <script type="text/javascript" src="booking.js"></script>
+        <!--connect to adminProcrss javascript -->
+        <script type="text/javascript" src="adminProcrss.js"></script>
+        <!--change the background -->
+        <style type="text/css">
+            body{
+                background:url(image/cabs.jpg);
+            }
+            p{
+                font-size:20px;
+            }
+            h1{
+                color:Orchid;
+            }
+        </style>
+    </head>
+    <!--use style -->
+    <body class ="centre ">
+        <h1 class = "wordCentre">CabsOnline System Administration</h1>
+        <HR>
+        <h3>This is for administrator to view the request and assign the request. </h3>
+        <form method ="post" action ="processAdmin.php">
+             <!--create request -->
+            <p>click the button to view the request <input name ="submit" type="button" onclick="getData('processAdmin.php', 'targetDiv')" value ="view request"></p>            
+            <br/>
+            <div id ="targetDiv"></div>
+        </form>
+        <form method ="post" action ="changeUnassigned.php">
+            <p>enter a reference number to assign the booking</p>
+            <label>Assign: </label><input type="text" name="referenceNum">
+            <input name="submit" type = "button" onClick = "getDataNum('changeUnassigned.php', 'Div', referenceNum.value)" value = "Assign">
+            <div id="Div">
+            </div>
+        </form>
+        <p><a href="booking.htm">Go to Booking page.</a></p>
+        <img alt="logo" src="image/logo.JPG">
+
+    </body>
+</html>
